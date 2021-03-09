@@ -1,0 +1,6 @@
+type ExampleEntity @entity {
+  id: ID!
+  count: BigInt!
+  astrodrop: Bytes! # address
+  ipfsHash: Bytes! # bytes32
+}
