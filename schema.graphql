@@ -1,6 +1,16 @@
-type ExampleEntity @entity {
+type Claimant @entity {
   id: ID!
-  count: BigInt!
-  astrodrop: Bytes! # address
-  ipfsHash: Bytes! # bytes32
+  eligibleAstrodrops: [ClaimantAstrodropRelation!]! @derivedFrom(field: "claimant")
+}
+
+type Astrodrop @entity {
+  id: ID!
+  ipfsHash: String!
+  claimants: [ClaimantAstrodropRelation!]! @derivedFrom(field: "astrodrop")
+}
+
+type ClaimantAstrodropRelation @entity {
+  id: ID!
+  claimant: Claimant!
+  astrodrop: Astrodrop!
 }

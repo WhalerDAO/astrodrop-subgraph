@@ -20,21 +20,55 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "template", "type": "address" },
-      { "internalType": "bytes32", "name": "salt", "type": "bytes32" }
+      {
+        "internalType": "address",
+        "name": "template",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "salt",
+        "type": "bytes32"
+      }
     ],
     "name": "computeAstrodropAddress",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "template", "type": "address" },
-      { "internalType": "address", "name": "token", "type": "address" },
-      { "internalType": "bytes32", "name": "merkleRoot", "type": "bytes32" },
-      { "internalType": "bytes32", "name": "salt", "type": "bytes32" },
-      { "internalType": "bytes32", "name": "ipfsHash", "type": "bytes32" }
+      {
+        "internalType": "address",
+        "name": "template",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "merkleRoot",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "salt",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "ipfsHash",
+        "type": "bytes32"
+      }
     ],
     "name": "createAstrodrop",
     "outputs": [
@@ -45,6 +79,30 @@
       }
     ],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "template",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "query",
+        "type": "address"
+      }
+    ],
+    "name": "isAstrodrop",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   }
 ]

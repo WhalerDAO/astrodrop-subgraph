@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -6,11 +6,12 @@ dataSources:
     name: AstrodropFactory
     network: rinkeby
     source:
-      address: "0x626c73d4b89e749785fa893e10749ed14ed334a1"
+      address: "0x024D4fE05EcA3776066f42e8A160F7c64794441F"
       abi: AstrodropFactory
+      startBlock: 8201997
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.2
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
         - CreateAstrodrop
