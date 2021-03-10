@@ -26,6 +26,27 @@ export function handleCreateAstrodrop(event: CreateAstrodrop): void {
   if (rawRootFile != null) {
     let rootFile = json.fromBytes(rawRootFile!).toObject()
 
+    // parse metadata
+    let metadata = rootFile.get('metadata').toObject()
+    let name = metadata.get('name')
+    let description = metadata.get('description')
+    let logoURL = metadata.get('logoURL')
+    let tokenAddress = metadata.get('tokenAddress')
+
+    if (!name.isNull()) {
+      astrodrop.name = name.toString()
+    }
+    if (!description.isNull()) {
+      astrodrop.description = description.toString()
+    }
+    if (!logoURL.isNull()) {
+      astrodrop.logoURL = logoURL.toString()
+    }
+    if (!tokenAddress.isNull()) {
+      astrodrop.tokenAddress = tokenAddress.toString()
+    }
+    astrodrop.save()
+
     // parse claimants
     let claimants = rootFile.get('keys').toArray()
     for (let i = 0; i < claimants.length; i++) {
