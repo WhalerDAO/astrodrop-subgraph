@@ -17,8 +17,9 @@ export function handleCreateAstrodrop(event: CreateAstrodrop): void {
   let rawRootFile = ipfs.cat(ipfsHashString)
 
   // create Astrodrop entity
-  let astrodrop = new Astrodrop(event.params.astrodrop.toHex());
-  astrodrop.ipfsHash = ipfsHashString;
+  let astrodrop = new Astrodrop(event.params.astrodrop.toHex())
+  astrodrop.creator = event.transaction.from.toHex()
+  astrodrop.ipfsHash = ipfsHashString
   astrodrop.save()
 
   // parse IPFS file

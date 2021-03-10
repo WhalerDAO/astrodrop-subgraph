@@ -5,6 +5,7 @@ type Claimant @entity {
 
 type Astrodrop @entity {
   id: ID!
+  creator: String!
   ipfsHash: String!
   claimants: [ClaimantAstrodropRelation!]! @derivedFrom(field: "astrodrop")
 }
