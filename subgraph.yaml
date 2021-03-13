@@ -6,9 +6,9 @@ dataSources:
     name: AstrodropFactory
     network: rinkeby
     source:
-      address: "0xC2c1781EafD8ed6c27b2313564DCFD8BBb20F122"
+      address: "0xffc740334948aAE4C81B25156343882541E31a10"
       abi: AstrodropFactory
-      startBlock: 8224767
+      startBlock: 8224831
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
