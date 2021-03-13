@@ -2,6 +2,7 @@ import { Bytes, ipfs, json } from "@graphprotocol/graph-ts"
 import {
   CreateAstrodrop
 } from "../generated/AstrodropFactory/AstrodropFactory"
+import { Astrodrop as AstrodropContract } from "../generated/AstrodropFactory/Astrodrop"
 import { Claimant, Astrodrop, ClaimantAstrodropRelation } from "../generated/schema"
 
 export function handleCreateAstrodrop(event: CreateAstrodrop): void {
@@ -20,6 +21,8 @@ export function handleCreateAstrodrop(event: CreateAstrodrop): void {
   let astrodrop = new Astrodrop(event.params.astrodrop.toHex())
   astrodrop.creator = event.transaction.from.toHex()
   astrodrop.ipfsHash = ipfsHashString
+  let astrodropContract = AstrodropContract.bind(event.params.astrodrop)
+  astrodrop.expirationTimestamp = astrodropContract.expireTimestamp()
   astrodrop.save()
 
   // parse IPFS file

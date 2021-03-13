@@ -6,9 +6,9 @@ dataSources:
     name: AstrodropFactory
     network: rinkeby
     source:
-      address: "0xedF15cC51f2FE084D16FB5C8d2C3A8612612437f"
+      address: "0xC2c1781EafD8ed6c27b2313564DCFD8BBb20F122"
       abi: AstrodropFactory
-      startBlock: 8224343
+      startBlock: 8224767
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -18,6 +18,8 @@ dataSources:
       abis:
         - name: AstrodropFactory
           file: ./abis/AstrodropFactory.json
+        - name: Astrodrop
+          file: ./abis/Astrodrop.json
       eventHandlers:
         - event: CreateAstrodrop(address,bytes32)
           handler: handleCreateAstrodrop

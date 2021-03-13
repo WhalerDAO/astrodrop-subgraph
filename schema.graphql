@@ -11,6 +11,7 @@ type Astrodrop @entity {
   description: String
   logoURL: String
   tokenAddress: String
+  expirationTimestamp: BigInt!
   claimants: [ClaimantAstrodropRelation!]! @derivedFrom(field: "astrodrop")
 }
 
