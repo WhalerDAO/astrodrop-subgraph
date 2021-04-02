@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: AstrodropFactory
-    network: rinkeby
+    network: mainnet
     source:
-      address: "0xffc740334948aAE4C81B25156343882541E31a10"
+      address: "0x10da261f68feaa66d6455d1710b3818edd633444"
       abi: AstrodropFactory
-      startBlock: 8224831
+      startBlock: 12119945
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
